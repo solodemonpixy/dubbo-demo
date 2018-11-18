@@ -4,11 +4,15 @@ import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.alibaba.dubbo.config.ServiceConfig;
+import com.alibaba.dubbo.config.spring.extension.SpringExtensionFactory;
 import com.alibaba.fastjson.JSON;
+import org.springframework.beans.BeansException;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 import java.io.File;
 import java.lang.reflect.InvocationHandler;
@@ -18,7 +22,9 @@ import java.lang.reflect.Type;
 import java.net.URL;
 
 @SpringBootApplication
-public class MockMainApplication implements ApplicationRunner {
+public class MockMainApplication implements ApplicationRunner, ApplicationContextAware {
+
+    private ApplicationContext applicationContext;
 
     public static void main(String[] args) {
         SpringApplication.run(MockMainApplication.class,args);
@@ -66,10 +72,16 @@ public class MockMainApplication implements ApplicationRunner {
         service.setProtocol(protocol); // 多个协议可以用setProtocols()
         service.setInterface(loadClass);
         service.setRef(proxyInstance);
+        service.setFilter("tracing");
 
         // 暴露及注册服务
         service.export();
 
 
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        SpringExtensionFactory.addApplicationContext(applicationContext);
     }
 }
