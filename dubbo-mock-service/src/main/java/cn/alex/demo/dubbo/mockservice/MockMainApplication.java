@@ -36,10 +36,6 @@ public class MockMainApplication implements ApplicationRunner, ApplicationContex
         LocalApiClassLoader localApiClassLoader = new LocalApiClassLoader(new URL[]{url}, Thread.currentThread().getContextClassLoader());
         Thread.currentThread().setContextClassLoader(localApiClassLoader);
         Class<?> loadClass = localApiClassLoader.loadClass("cn.alex.demo.dubboapi.HelloService");
-//        JarLoaderUtil.loadJarPath("/Users/zhouchushu/work/dubboapi/");
-
-//        Class<?> loadClass = Class.forName("cn.alex.demo.dubboapi.HelloService");
-
         Object proxyInstance = Proxy.newProxyInstance(localApiClassLoader, new Class[]{loadClass}, new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {

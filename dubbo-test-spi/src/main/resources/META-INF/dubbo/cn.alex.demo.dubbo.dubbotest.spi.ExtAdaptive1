@@ -1,0 +1,3 @@
+demo1=cn.alex.demo.dubbo.dubbotest.spi.ExtAdaptiveDemo1
+demo2=cn.alex.demo.dubbo.dubbotest.spi.ExtAdaptiveDemo2
+demo3=cn.alex.demo.dubbo.dubbotest.spi.ExtAdaptiveDemo3

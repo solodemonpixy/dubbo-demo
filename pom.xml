@@ -19,6 +19,7 @@
         <module>dubbo-consumer</module>
         <module>dubbo-demo-api</module>
         <module>dubbo-mock-service</module>
+        <module>dubbo-test-spi</module>
     </modules>
 
     <properties>
