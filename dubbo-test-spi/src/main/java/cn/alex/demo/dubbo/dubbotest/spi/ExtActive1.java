@@ -1,6 +1,7 @@
 package cn.alex.demo.dubbo.dubbotest.spi;
 
-import com.alibaba.dubbo.common.extension.SPI;
+
+import org.apache.dubbo.common.extension.SPI;
 
 @SPI
 public interface ExtActive1 {

@@ -1,7 +1,7 @@
 package cn.alex.demo.dubboconsumer.controller;
 
 import cn.alex.demo.dubboapi.HelloService;
-import com.alibaba.dubbo.config.annotation.Reference;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/hello")
 public class HelloController {
 
-    @Reference(check = false,filter = {"tracing"})
+    @Reference(check = false)
     private HelloService helloService;
 
     @GetMapping("/testHello/{name}")

@@ -1,6 +1,7 @@
 package cn.alex.demo.dubbo.dubbotest.spi;
 
-import com.alibaba.dubbo.common.URL;
+
+import org.apache.dubbo.common.URL;
 
 public class ExtAdaptiveDemo3 implements ExtAdaptive1 {
     @Override

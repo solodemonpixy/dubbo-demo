@@ -1,2 +1,5 @@
-group=cn.alex.demo.dubbo.dubbotest.spi.ExtActiveGroup
+default_group1=cn.alex.demo.dubbo.dubbotest.spi.ExtActiveGroup
+default_group2=cn.alex.demo.dubbo.dubbotest.spi.ExtActiveGroup2
 groupValue=cn.alex.demo.dubbo.dubbotest.spi.ExtActiveGroupValue
+impl=cn.alex.demo.dubbo.dubbotest.spi.ExtActiveImpl
+impl2=cn.alex.demo.dubbo.dubbotest.spi.ExtActiveImpl2

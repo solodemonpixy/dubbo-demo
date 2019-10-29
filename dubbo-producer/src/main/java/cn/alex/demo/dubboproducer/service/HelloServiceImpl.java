@@ -3,9 +3,9 @@ package cn.alex.demo.dubboproducer.service;
 import cn.alex.demo.dubboapi.HelloService;
 import cn.alex.demo.dubboapi.RpcRespDTO;
 import cn.alex.demo.dubboapi.UserDTO;
-import com.alibaba.dubbo.config.annotation.Service;
+import org.apache.dubbo.config.annotation.Service;
 
-@Service(filter = "myfilter")
+@Service
 public class HelloServiceImpl implements HelloService {
     @Override
     public String hello(String name) {
